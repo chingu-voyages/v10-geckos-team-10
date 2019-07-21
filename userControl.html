@@ -1,0 +1,174 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./myCSS.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/7d687e832e.js"></script>
+    <title>Geckos | User Control</title>
+  </head>
+  <body>
+    <section class="page" id="page1">
+      <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+          <a href="" class="navbar-brand">Geckos</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+          ></button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarCollapse"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item mr-3">
+                <a class="nav-link myWhite" style="color: white;" href="#"
+                  >About Us</a
+                >
+              </li>
+              <li class="nav-item mr-3">
+                <a class="nav-link myWhite" style="color: white;" href="#"
+                  >Pricing</a
+                >
+              </li>
+              <li class="nav-item mr-3">
+                <a class="nav-link myWhite" style="color: white;" href="#"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <div class=" container signupContainer">
+        <div class="row">
+          <div class="col-sm-6" id="SMSignup">
+            <h5>Sign up with Social Media</h5>
+            <div class="socialTab" id="facebookSocialTab">
+              Sign up with facebook
+            </div>
+            <div class="socialTab" id="googleSocialTab">
+              Sign up with google
+            </div>
+            <div class="socialTab" id="twitterSocialTab">
+              Sign up with twitter
+            </div>
+            <div class="socialTab" id="linkedInSocialTab">
+              Sign up with Linkedin
+            </div>
+            <p>
+              Already have an account?
+              <span onclick="goToSignin()" id="goToAlternate">Sign in!</span>
+            </p>
+          </div>
+          <!-- <div class="col-sm-0.1 red"><div class="divider"></div></div> -->
+          <div class="col-sm-6" id="manualSignup">
+            <h5>or sign up manually</h5>
+            <form action="">
+              <input
+                type="text"
+                name="userName"
+                id="userName"
+                placeholder="Username"
+              />
+              <br />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+              /><br />
+              <input
+                type="password"
+                name="repeatPassword"
+                id="repeatpassword"
+                placeholder="Repeat password"
+              /><br />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="E-mail"
+              /><br />
+              <input
+                type="checkbox"
+                name="termsAndConditions"
+                id="termsAndConditions"
+              />
+              <label for="termsAndConditions"
+                >I agree with all of Geckos T&C
+              </label>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class=" container signinContainer">
+        <div class="row">
+          <div class="col-sm-6" id="SMSignup">
+            <h5>Sign in with Social Media</h5>
+            <div class="socialTab" id="facebookSocialTab">
+              Sign in with facebook
+            </div>
+            <div class="socialTab" id="googleSocialTab">
+              Sign in with google
+            </div>
+            <div class="socialTab" id="twitterSocialTab">
+              Sign in with twitter
+            </div>
+            <div class="socialTab" id="linkedInSocialTab">
+              Sign in with Linkedin
+            </div>
+            <p>
+              Don't have an account?
+              <span onclick="goToSignup()" id="goToAlternate">Sign up!</span>
+            </p>
+          </div>
+          <!-- <div class="col-sm-0.1 red"><div class="divider"></div></div> -->
+          <div class="col-sm-6" id="manualSignup">
+            <h5>or sign in manually</h5>
+            <form action="" id="signInForm">
+              <input
+                type="text"
+                name="userName"
+                id="userNameSignin"
+                placeholder="Username"
+              />
+              <br />
+              <input
+                type="password"
+                name="password"
+                id="passwordSignin"
+                placeholder="Password"
+              /><br />
+              <input
+                type="checkbox"
+                name="termsAndConditions"
+                id="rememberMe"
+              />
+              <label for="termsAndConditions">Remember me? </label>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="userControl.js
+  "></script>
+</html>
