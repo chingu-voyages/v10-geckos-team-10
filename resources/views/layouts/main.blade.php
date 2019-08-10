@@ -20,7 +20,11 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/7d687e832e.js"></script>
 </head>
-<body onload="type()">
+@if(Route::current()->getName() == 'landing')
+    <body onload="type()">
+@else
+    <body>
+@endif
 
 	@yield('content')
 

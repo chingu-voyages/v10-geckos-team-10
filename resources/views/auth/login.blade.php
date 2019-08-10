@@ -27,20 +27,52 @@
             <!-- <div class="col-sm-0.1 red"><div class="divider"></div></div> -->
             <div class="col-sm-6" id="manualSignup">
                 <h5>or sign up manually</h5>
-                <form action="">
-                    <input type="text" name="userName" id="userName" placeholder="Username" />
-                    <br />
-                    <input type="password" name="password" id="password" placeholder="Password" />
-                    <br />
-                    <input type="password" name="repeatPassword" id="repeatpassword" placeholder="Repeat password" />
-                    <br />
-                    <input type="email" name="email" id="email" placeholder="E-mail" />
-                    <br />
-                    <input type="checkbox" name="termsAndConditions" id="termsAndConditions" />
-                    <label for="termsAndConditions">I agree with all of Geckos T&C</label>
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <div>
+                        <input class="@error('name') is-invalid @enderror" type="text" name="name" id="Name" placeholder="Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div>
+                        <input class="@error('username') is-invalid @enderror" type="text" name="username" id="userName" placeholder="Username" value="{{ old('username') }}" required autocomplete="username">
+                        @error('username')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div>
+                        <input class="@error('email') is-invalid @enderror" type="email" name="email" id="email" placeholder="E-mail" value="{{ old('email') }}" required autocomplete="email">
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div>
+                        <input class="@error('password') is-invalid @enderror" type="password" name="password" id="password" placeholder="Password" required autocomplete="new-password">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div>
+                        <input type="password" name="password_confirmation" id="repeatpassword" placeholder="Confirm password" required autocomplete="new-password">
+                    </div>
+                    <div>
+                        <input type="checkbox" name="termsAndConditions" id="termsAndConditions" />
+                        <label for="termsAndConditions">I agree with all of Geckos T&C</label>
+                    </div>
                     <button type="submit">Submit</button>
                 </form>
             </div>
+        </div>
+    </div>
     <div class=" container signinContainer">
         <div class="row">
             <div class="col-sm-6" id="SMSignup">
@@ -65,85 +97,41 @@
             <!-- <div class="col-sm-0.1 red"><div class="divider"></div></div> -->
             <div class="col-sm-6" id="manualSignup">
                 <h5>or sign in manually</h5>
-                <form action="" id="signInForm">
-                    <input type="text" name="userName" id="userNameSignin" placeholder="Username" />
+                <form method="POST" action="{{ route('login') }}" id="signInForm">
+                    @csrf
+                    <div>
+                        <input type="email" name="email" id="userNameSignin" placeholder="E-Mail" required autocomplete="email" autofocus>
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
                     <br />
-                    <input type="password" name="password" id="passwordSignin" placeholder="Password" /><br />
-                    <input type="checkbox" name="termsAndConditions" id="rememberMe" />
-                    <label for="termsAndConditions">Remember me? </label>
-                    <button type="submit">Submit</button>
+                    <div>
+                        <input type="password" name="password" id="passwordSignin" placeholder="Password" required autocomplete="current-password">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <br />
+                    <div>
+                        <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <label for="termsAndConditions">Remember me? </label>
+                    </div>
+                    <div>
+                        <button type="submit">{{ __('Login') }}</button>
+                        @if (Route::has('password.request'))
+                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                        @endif
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </section>
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
 @endsection
