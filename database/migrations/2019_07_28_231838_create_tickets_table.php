@@ -16,10 +16,10 @@ class CreateTicketsTable extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->text('content')->default('I need some assistance');
+            $table->text('content');
             $table->string('slug')->nullable();
             $table->tinyInteger('status')->default(1);
-            $table->integer('user_id')->unsinged();
+            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->softDeletes();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');

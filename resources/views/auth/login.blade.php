@@ -3,7 +3,7 @@
 @section('content')
 <section class="page" id="page1">
     @include('partials.header')
-    <div class=" container signupContainer">
+    <div class="container signupContainer">
         <div class="row">
             <div class="col-sm-6" id="SMSignup">
                 <h5>Sign up with Social Media</h5>

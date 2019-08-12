@@ -85,13 +85,13 @@ padding: 0;
     display: flex;
     flex-direction: row;
 }
-.card {
+.cards {
     /* width: 333px !important; */
     height: 180px;
     text-align: center;
     padding-top: 20px;
 }
-.card-span {
+.cards-span {
     text-align: center;
 }
 
@@ -216,6 +216,12 @@ padding: 0;
     border-radius: 5px;
     box-shadow: 1px 1px 10px rgba(44, 40, 34, 0.397);
     /* display: none; */
+}
+.createContainer {
+    position: absolute;
+    background: #f4f4f4;
+    width: 900px !important;
+    box-shadow: 1px 1px 10px rgba(44, 40, 34, 0.397);
 }
 
 .socialTab {

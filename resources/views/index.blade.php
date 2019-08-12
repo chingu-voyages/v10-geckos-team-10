@@ -48,24 +48,24 @@
 	<div id="businessFunctions">
 		<div class="row">
 			<div class="card-columns col-12">
-				<div class="card col-lg mb-5 mt-5 border-0">
-					<span class="card-span text-center">
+				<div class="cards col-lg mb-5 mt-5 border-0">
+					<span class="cards-span text-center">
 						<i class="far fa-envelope fa-4x"></i>
 					</span>
 					<div class="card-body">
 						<h5 class="card-title">Email Marketing</h5>
 					</div>
 				</div>
-				<div class="card col-lg mb-5 mt-5 border-0">
-					<span class="card-span text-center">
+				<div class="cards col-lg mb-5 mt-5 border-0">
+					<span class="cards-span text-center">
 						<i class="fas fa-rss fa-4x"></i>
 					</span>
 					<div class="card-body">
 						<h5 class="card-title text-center">Blog Posts</h5>
 					</div>
 				</div>
-				<div class="card col-lg mb-5 mt-5 border-0">
-					<span class="card-span text-center">
+				<div class="cards col-lg mb-5 mt-5 border-0">
+					<span class="cards-span text-center">
 						<i class="fas fa-bullhorn fa-4x"></i>
 					</span>
 					<div class="card-body">
@@ -75,23 +75,23 @@
 			</div>
 			<div class="card-columns col-12">
 				<div class="card col-lg mb-5 mt-5 border-0">
-					<span class="card-span text-center">
+					<span class="cards-span text-center">
 						<i class="far fa-comments fa-4x"></i>
 					</span>
 					<div class="card-body">
 						<h5 class="card-title text-center">Customer Communications</h5>
 					</div>
 				</div>
-				<div class="card col-lg mb-5 mt-5 border-0">
-					<span class="card-span text-center">
+				<div class="cards col-lg mb-5 mt-5 border-0">
+					<span class="cards-span text-center">
 						<i class="fas fa-users fa-4x"></i>
 					</span>
 					<div class="card-body">
 						<h5 class="card-title text-center">Social Media</h5>
 					</div>
 				</div>
-				<div class="card col-lg mb-5 mt-5 border-0">
-					<span class="card-span text-center">
+				<div class="cards col-lg mb-5 mt-5 border-0">
+					<span class="cards-span text-center">
 						<i class="fas fa-poll fa-4x"></i>
 					</span>
 					<div class="card-body">

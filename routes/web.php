@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('ticket')->group(function() {
+	Route::get('', 'TicketController@index');
+	Route::get('{slug}', 'TicketController@show');
+	Route::get('create', 'TicketController@create');
+	Route::post('create', 'TicketController@store');
+});
