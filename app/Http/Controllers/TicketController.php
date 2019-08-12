@@ -53,7 +53,9 @@ class TicketController extends Controller
             'slug' => $slug,
         ]);
 
-        return back()->with('status', 'Your ticket has been created! Your ticket link is: '.$slug);
+        $url = url("/tickets/{$slug}");
+
+        return back()->with('status', "Your ticket has been created! Your ticket link is: <a href='".$url."'>".$slug."</a>");
     }
 
     /**
@@ -62,9 +64,10 @@ class TicketController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $ticket = Ticket::whereSlug($slug)->firstOrFail();
+        return view('tickets.show', compact('ticket'));
     }
 
     /**
@@ -73,9 +76,10 @@ class TicketController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $ticket = Ticket::whereSlug($slug)->firstOrFail();
+        return view('tickets.edit', compact('ticket'));
     }
 
     /**

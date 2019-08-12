@@ -22,15 +22,20 @@
 					<div class="form-group">
 						<label class="col-lg-2" for="title">Title</label>
 						<div class="col-lg-10">
-							<input type="text" name="title" class="form-control" id="title">
+							<input type="text" name="title" class="form-control" id="title" value="{!! $ticket->title !!}">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-lg-2" for="content">Content</label>
 						<div class="col-lg-10">
-							<textarea class="form-control" rows="3" name="content" id="content"></textarea>
+							<textarea class="form-control" rows="3" name="content" id="content" value={!! $ticket->content !!}></textarea>
 							<span class="form-text">Feel free to ask any question</span>
 						</div>
+					</div>
+					<div class="form-group">
+						<label>
+							<input type="checkbox" name="status" {!! $ticket->status?"":"checked"!!} > Close this ticket?
+						</label>
 					</div>
 					<div class="form-group">
 						<div class="col-lg-10">

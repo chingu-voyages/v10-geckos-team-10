@@ -25,7 +25,7 @@
 								@foreach($tickets as $ticket)
 									<tr>
 										<td>{!! $ticket->id !!}</td>
-										<td>{!! $ticket->title !!}</td>
+										<td><a href="{!! action('TicketController@show', $ticket->slug) !!}">{!! $ticket->title !!}</a></td>
 										<td>{!! $ticket->status ? 'Pending' : 'Answered' !!}</td>
 									</tr>
 								@endforeach

@@ -19,9 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('ticket')->group(function() {
-	Route::get('', 'TicketController@index');
-	Route::get('{slug}', 'TicketController@show');
-	Route::get('create', 'TicketController@create');
-	Route::post('create', 'TicketController@store');
-});
+
+Route::get('/ticket/create', 'TicketController@create');
+Route::post('/ticket/create', 'TicketController@store');
+Route::get('/tickets', 'TicketController@index');
+Route::get('/tickets/{slug}', 'TicketController@show');
+Route::get('/tickets/{slug}/edit', 'TicketController@edit');
+Route::post('/tickets/{slug}/edit', 'TicketController@update');
